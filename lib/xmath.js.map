@@ -1,1 +1,1 @@
-{"version":3,"file":"xmath.js","names":["Xmath","exports"],"sources":["../src/xmath.js"],"sourcesContent":["export const Xmath = {\n}\n"],"mappings":";;;;;;AAAO,MAAMA,KAAK,GAAG,CACrB,CAAC;AAAAC,OAAA,CAAAD,KAAA,GAAAA,KAAA"}
+{"version":3,"file":"xmath.js","names":["Xmath","exports"],"sources":["../src/xmath.js"],"sourcesContent":["export const Xmath = {\n}\n"],"mappings":";;;;;;AAAO,IAAMA,KAAK,GAAG,CACrB,CAAC;AAAAC,OAAA,CAAAD,KAAA,GAAAA,KAAA"}
