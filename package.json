@@ -15,7 +15,8 @@
     "url": "git@github.com:akicho8/sardaxon.git"
   },
   "browserslist": [
-    "> 0%"
+    "> 0%",
+    "not dead"
   ],
   "files": [
     "lib"
