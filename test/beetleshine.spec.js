@@ -1,4 +1,4 @@
-import { Sardaxon } from "@/sardaxon.js"
+import { Sardaxon } from "@/beetleshine.js"
 
 describe("Sardaxon", () => {
   test("even_p", () => {

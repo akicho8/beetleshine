@@ -28,7 +28,7 @@ task :release do
     npm version patch
     git push --tags
     npm publish
-    (cd ~/src/shogi-extend/nuxt_side && ncu sardaxon -u && npm i)
-    (cd ~/src/shogi-player           && ncu sardaxon -u && npm i)
+    (cd ~/src/shogi-extend/nuxt_side && npx ncu beetleshine -u && npm i)
+    (cd ~/src/shogi-player           && npx ncu beetleshine -u && npm i)
   EOT
 end

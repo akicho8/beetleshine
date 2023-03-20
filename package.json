@@ -1,18 +1,18 @@
 {
-  "name": "sardaxon",
+  "name": "beetleshine",
   "version": "0.0.5",
   "description": "A simple library",
   "keywords": "small library",
   "author": "Akira Ikeda <pinpon.ikeda@gmail.com>",
-  "main": "lib/sardaxon.js",
+  "main": "lib/beetleshine.js",
   "private": false,
   "bugs": {
-    "url": "https://github.com/akicho8/sardaxon/issues",
+    "url": "https://github.com/akicho8/beetleshine/issues",
     "email": "pinpon.ikeda@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:akicho8/sardaxon.git"
+    "url": "git@github.com:akicho8/beetleshine.git"
   },
   "browserslist": [
     "> 0%",
