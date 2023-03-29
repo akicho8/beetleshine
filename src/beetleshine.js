@@ -18,7 +18,7 @@ import { Xaratio    } from "./xaratio.js"
 import { Xbase64    } from "./xbase64.js"
 import { Xquery     } from "./xquery.js"
 
-export const Sardaxon = {
+export const Beetleshine = {
   ...Xassertion,
   ...Xinteger,
   ...Xfloat,

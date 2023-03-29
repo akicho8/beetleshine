@@ -1,7 +1,7 @@
-import { Sardaxon } from "@/beetleshine.js"
+import { Beetleshine } from "@/beetleshine.js"
 
-describe("Sardaxon", () => {
+describe("Beetleshine", () => {
   test("even_p", () => {
-    expect(Sardaxon.even_p(0)).toEqual(true)
+    expect(Beetleshine.even_p(0)).toEqual(true)
   })
 })
