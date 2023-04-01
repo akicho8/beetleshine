@@ -25,8 +25,8 @@ export const Xstring = {
     if (typeof window === "undefined") {
       return
     }
-    Xassertion.__assert__(typeof window !== 'undefined', "typeof window !== 'undefined'")
-    Xassertion.__assert__(window[str], "window[str]")
+    Xassertion.assert(typeof window !== 'undefined', "typeof window !== 'undefined'")
+    Xassertion.assert(window[str], "window[str]")
     return window[str]
   },
 
