@@ -28,6 +28,10 @@ export const Xarray = {
     return _.shuffle(ary)
   },
 
+  ary_sample(ary) {
+    return _.sample(ary)
+  },
+
   // 必ず配列にする
   ary_wrap(ary) {
     if (!_.isArray(ary)) {

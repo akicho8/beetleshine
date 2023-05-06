@@ -31,6 +31,11 @@ describe("Xarray", () => {
     Xarray.ary_shuffle(v)
     expect(v).toEqual(["a", "b", "c"])
   })
+  test("ary_sample", () => {
+    const v = ["a", "b", "c"]
+    Xarray.ary_sample(v)
+    expect(v).toEqual(["a", "b", "c"])
+  })
   test("ary_wrap", () => {
     expect(Xarray.ary_wrap(null)).toEqual([null])
     expect(Xarray.ary_wrap([])).toEqual([])
