@@ -43,6 +43,14 @@ describe("Xarray", () => {
     expect(Xarray.ary_sort_by(ary, e => -e)).toEqual([2, 1, 0])
     expect(ary).toEqual([1, 0, 2])
   })
+  test("ary_find_all", () => {
+    expect(Xarray.ary_find_all([5, 6, 7], e => e >= 6)).toEqual([6, 7])
+    expect(Xarray.ary_find_all([5, 6, 7], e => false)).toEqual([])
+  })
+  test("ary_find_index", () => {
+    expect(Xarray.ary_find_index([5, 6, 7], e => false)).toEqual(undefined)
+    expect(Xarray.ary_find_index([5, 6, 7], e => e === 6)).toEqual(1)
+  })
   test("ary_each_slice_to_a", () => {
     expect(Xarray.ary_each_slice_to_a(["a", "b", "c", "d"], 2)).toEqual([["a", "b"], ["c", "d"]])
     expect(Xarray.ary_each_slice_to_a(["a", "b", "c"], 2)).toEqual([["a", "b"], ["c"]])

@@ -39,6 +39,19 @@ export const Xarray = {
     return sorted.map(e => e.source)
   },
 
+  ary_find_all(ary, block) {
+    Xassertion.assert_kind_of_array(ary)
+    return ary.filter(e => block(e))
+  },
+
+  ary_find_index(ary, block) {
+    Xassertion.assert_kind_of_array(ary)
+    const index = ary.findIndex((e, i) => block(e))
+    if (index >= 0) {
+      return index
+    }
+  },
+
   // expect(Gs.ary_each_slice_to_a(["a", "b", "c", "d"], 2)).toEqual([["a", "b"], ["c", "d"]])
   // expect(Gs.ary_each_slice_to_a(["a", "b", "c"], 2)).toEqual([["a", "b"], ["c"]])
   // expect(() => Gs.ary_each_slice_to_a(["a", "b"], 0)).toThrow()
