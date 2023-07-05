@@ -3,6 +3,30 @@ import { Xinteger } from "./xinteger.js"
 import _ from "lodash"
 
 export const Xarray = {
+  ary_first(ary, n = null) {
+    if (n == null) {
+      return ary[0]
+    } else {
+      return ary.slice(0, n)
+    }
+  },
+
+  ary_last(ary, n = null) {
+    if (n == null) {
+      return ary[ary.length - 1]
+    } else {
+      return ary.slice(-n)
+    }
+  },
+
+  ary_take(ary, index) {
+    return _.take(ary, index)
+  },
+
+  ary_drop(ary, index) {
+    return _.drop(ary, index)
+  },
+
   // expect(Gs.ary_each_slice_to_a(["a", "b", "c", "d"], 2)).toEqual([["a", "b"], ["c", "d"]])
   // expect(Gs.ary_each_slice_to_a(["a", "b", "c"], 2)).toEqual([["a", "b"], ["c"]])
   // expect(() => Gs.ary_each_slice_to_a(["a", "b"], 0)).toThrow()
@@ -76,14 +100,6 @@ export const Xarray = {
       }
     }
     return ary
-  },
-
-  ary_take(ary, index) {
-    return _.take(ary, index)
-  },
-
-  ary_drop(ary, index) {
-    return _.drop(ary, index)
   },
 
   // {1, null, undefined, ""} => [1, ""]

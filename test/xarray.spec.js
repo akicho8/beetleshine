@@ -15,6 +15,28 @@ const ARRAY_VALUE1 = [
 ]
 
 describe("Xarray", () => {
+  test("ary_first", () => {
+    const ary = ["a", "b", "c"]
+    expect(Xarray.ary_first(ary)).toEqual("a")
+    expect(Xarray.ary_first(ary, 2)).toEqual(["a", "b"])
+    expect(ary).toEqual(["a", "b", "c"])
+  })
+  test("ary_last", () => {
+    const ary = ["a", "b", "c"]
+    expect(Xarray.ary_last(ary)).toEqual("c")
+    expect(Xarray.ary_last(ary, 2)).toEqual(["b", "c"])
+    expect(ary).toEqual(["a", "b", "c"])
+  })
+  test("ary_take", () => {
+    const ary = ["a", "b", "c"]
+    expect(Xarray.ary_take(ary, 1)).toEqual(["a"])
+    expect(ary).toEqual(["a", "b", "c"])
+  })
+  test("ary_drop", () => {
+    const ary = ["a", "b", "c"]
+    expect(Xarray.ary_drop(ary, 1)).toEqual(["b", "c"])
+    expect(ary).toEqual(["a", "b", "c"])
+  })
   test("ary_each_slice_to_a", () => {
     expect(Xarray.ary_each_slice_to_a(["a", "b", "c", "d"], 2)).toEqual([["a", "b"], ["c", "d"]])
     expect(Xarray.ary_each_slice_to_a(["a", "b", "c"], 2)).toEqual([["a", "b"], ["c"]])
@@ -56,16 +78,6 @@ describe("Xarray", () => {
     expect(Xarray.ary_rotate(ary)).toEqual(["b", "c", "a"])
     expect(Xarray.ary_rotate(ary, 2)).toEqual(["c", "a", "b"])
     expect(Xarray.ary_rotate(ary, -2)).toEqual(["b", "c", "a"])
-    expect(ary).toEqual(["a", "b", "c"])
-  })
-  test("ary_take", () => {
-    const ary = ["a", "b", "c"]
-    expect(Xarray.ary_take(ary, 1)).toEqual(["a"])
-    expect(ary).toEqual(["a", "b", "c"])
-  })
-  test("ary_drop", () => {
-    const ary = ["a", "b", "c"]
-    expect(Xarray.ary_drop(ary, 1)).toEqual(["b", "c"])
     expect(ary).toEqual(["a", "b", "c"])
   })
   test("ary_compact", () => {
