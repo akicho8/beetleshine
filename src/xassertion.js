@@ -1,3 +1,5 @@
+import _ from "lodash"
+
 export const Xassertion = {
   assert(value, message = null) {
     if (!value) {
@@ -22,7 +24,7 @@ export const Xassertion = {
   },
 
   assert_kind_of_array(value, message = null) {
-    this.assert_equal("array", typeof value, message)
+    this.assert(_.isArray(value), message)
   },
 
   assert_kind_of_hash(value, message = null) {

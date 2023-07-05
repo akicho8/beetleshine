@@ -1,9 +1,11 @@
 import { Xobject } from "./xobject.js"
 import { Xinteger } from "./xinteger.js"
+import { Xassertion } from "./xassertion.js"
 import _ from "lodash"
 
 export const Xarray = {
   ary_first(ary, n = null) {
+    Xassertion.assert_kind_of_array(ary)
     if (n == null) {
       return ary[0]
     } else {
@@ -12,6 +14,7 @@ export const Xarray = {
   },
 
   ary_last(ary, n = null) {
+    Xassertion.assert_kind_of_array(ary)
     if (n == null) {
       return ary[ary.length - 1]
     } else {
@@ -20,11 +23,20 @@ export const Xarray = {
   },
 
   ary_take(ary, index) {
+    Xassertion.assert_kind_of_array(ary)
     return _.take(ary, index)
   },
 
   ary_drop(ary, index) {
+    Xassertion.assert_kind_of_array(ary)
     return _.drop(ary, index)
+  },
+
+  ary_sort_by(ary, block) {
+    Xassertion.assert_kind_of_array(ary)
+    const wrap = ary.map(e => ({ source: e, value: block(e) }))
+    const sorted = _.sortBy(wrap, "value")
+    return sorted.map(e => e.source)
   },
 
   // expect(Gs.ary_each_slice_to_a(["a", "b", "c", "d"], 2)).toEqual([["a", "b"], ["c", "d"]])
@@ -32,6 +44,7 @@ export const Xarray = {
   // expect(() => Gs.ary_each_slice_to_a(["a", "b"], 0)).toThrow()
   // expect(Gs.ary_each_slice_to_a([], 2)).toEqual([])
   ary_each_slice_to_a(ary, step) {
+    Xassertion.assert_kind_of_array(ary)
     if (step <= 0) {
       throw new Error("invalid slice size")
     }
@@ -44,15 +57,18 @@ export const Xarray = {
 
   // 元を破壊させない
   ary_reverse(ary) {
+    Xassertion.assert_kind_of_array(ary)
     return [...ary].reverse()
   },
 
   // 元は破壊しない
   ary_shuffle(ary) {
+    Xassertion.assert_kind_of_array(ary)
     return _.shuffle(ary)
   },
 
   ary_sample(ary) {
+    Xassertion.assert_kind_of_array(ary)
     return _.sample(ary)
   },
 
@@ -66,12 +82,14 @@ export const Xarray = {
 
   // はみ出ない
   ary_cycle_at(ary, index) {
+    Xassertion.assert_kind_of_array(ary)
     return ary[Xinteger.imodulo(index, ary.length)]
   },
 
   // ary 内のインデックス from の要素を to に移動
   // https://qiita.com/nowayoutbut/items/991515b32805e21f8892
   ary_move(ary, from, to) {
+    Xassertion.assert_kind_of_array(ary)
     const n = ary.length
     ary = [...ary]
     to = Xinteger.imodulo(to, n)
@@ -87,6 +105,7 @@ export const Xarray = {
   },
 
   ary_rotate(ary, n = 1) {
+    Xassertion.assert_kind_of_array(ary)
     ary = [...ary]
     if (ary.length > 0) {
       if (n > 0) {
@@ -104,6 +123,7 @@ export const Xarray = {
 
   // {1, null, undefined, ""} => [1, ""]
   ary_compact(ary) {
+    Xassertion.assert_kind_of_array(ary)
     return _.reduce(ary, (a, val) => {
       if (val == null) {
       } else {
@@ -115,6 +135,7 @@ export const Xarray = {
 
   // {1, null, undefined, ""} => [1]
   ary_compact_blank(ary) {
+    Xassertion.assert_kind_of_array(ary)
     return _.reduce(ary, (a, val) => {
       if (Xobject.present_p(val)) {
         a.push(val)

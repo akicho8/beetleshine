@@ -37,6 +37,12 @@ describe("Xarray", () => {
     expect(Xarray.ary_drop(ary, 1)).toEqual(["b", "c"])
     expect(ary).toEqual(["a", "b", "c"])
   })
+  test("ary_sort_by", () => {
+    const ary = [1, 0, 2]
+    expect(Xarray.ary_sort_by(ary, e => e)).toEqual([0, 1, 2])
+    expect(Xarray.ary_sort_by(ary, e => -e)).toEqual([2, 1, 0])
+    expect(ary).toEqual([1, 0, 2])
+  })
   test("ary_each_slice_to_a", () => {
     expect(Xarray.ary_each_slice_to_a(["a", "b", "c", "d"], 2)).toEqual([["a", "b"], ["c", "d"]])
     expect(Xarray.ary_each_slice_to_a(["a", "b", "c"], 2)).toEqual([["a", "b"], ["c"]])
