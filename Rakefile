@@ -28,7 +28,7 @@ task :release do
     npm version patch
     git push --tags
     npm publish
-    (cd ~/src/shogi-extend/nuxt_side && npx npm-check-updates beetleshine -u && npm i)
-    (cd ~/src/shogi-player           && npx npm-check-updates beetleshine -u && npm i)
+    (cd ~/src/shogi-extend/nuxt_side && npx npm-check-updates beetleshine -u && pnpm i)
+    (cd ~/src/shogi-player           && npx npm-check-updates beetleshine -u && pnpm i)
   EOT
 end
