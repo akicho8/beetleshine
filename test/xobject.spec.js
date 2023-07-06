@@ -2,6 +2,11 @@ import { Xobject } from "@/xobject.js"
 import _ from "lodash"
 
 describe("Xobject", () => {
+  test("equal_p", () => {
+    expect(Xobject.equal_p(["a"], ["a"])).toEqual(true)
+    expect(Xobject.equal_p("a", "a")).toEqual(true)
+    expect(Xobject.equal_p([], [])).toEqual(true)
+  })
   test("blank_p", () => {
     expect(Xobject.blank_p(null)).toEqual(true)
     expect(Xobject.blank_p(undefined)).toEqual(true)

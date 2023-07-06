@@ -1,6 +1,11 @@
 const util = require("util")
+import _ from "lodash"
 
 export const Xobject = {
+  equal_p(a, b) {
+    return _.isEqual(a, b)
+  },
+
   // lodash の _.isEmpty は不自然な挙動なので使ってはいけない
   blank_p(value) {
     return value === undefined || value === null || value === false ||

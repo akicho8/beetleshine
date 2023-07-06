@@ -50,7 +50,6 @@ describe("Xarray", () => {
   test("ary_find_index", () => {
     expect(Xarray.ary_find_index([5, 6, 7], e => false)).toEqual(undefined)
     expect(Xarray.ary_find_index([5, 6, 7], e => e === 6)).toEqual(1)
-    expect(Xarray.ary_find_index([5, 6, 7], (e, i) => i === 1)).toEqual(1)
   })
   test("ary_each_slice_to_a", () => {
     expect(Xarray.ary_each_slice_to_a(["a", "b", "c", "d"], 2)).toEqual([["a", "b"], ["c", "d"]])

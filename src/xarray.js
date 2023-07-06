@@ -46,7 +46,7 @@ export const Xarray = {
 
   ary_find_index(ary, block) {
     Xassertion.assert_kind_of_array(ary)
-    const index = ary.findIndex((e, i) => block(e, i))
+    const index = ary.findIndex(e => block(e))
     if (index >= 0) {
       return index
     }
