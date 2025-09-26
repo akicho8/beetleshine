@@ -13,7 +13,7 @@ desc "[b] build"
 task :build do
   system "sh", "-vec", <<~EOT, exception: true
     babel src -d lib --source-maps --no-comments
-    exa -lh lib
+    eza -lh lib
   EOT
 end
 
