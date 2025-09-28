@@ -156,4 +156,12 @@ export const Xarray = {
       return a
     }, [])
   },
+
+  // a - b
+  ary_minus(a, b) {
+    Xassertion.assert_kind_of_array(a)
+    Xassertion.assert_kind_of_array(b)
+    const set_b = new Set(b)
+    return a.filter(e => !set_b.has(e))
+  },
 }

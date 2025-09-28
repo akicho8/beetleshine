@@ -100,4 +100,7 @@ describe("Xarray", () => {
   test("ary_compact_blank", () => {
     expect(Xarray.ary_compact_blank(ARRAY_VALUE1)).toEqual([0, 1, {a:0}, ["a"], true])
   })
+  test("ary_minus", () => {
+    expect(Xarray.ary_minus(["a", "b", "c", "d"], ["b", "d"])).toEqual(["a", "c"])
+  })
 })
