@@ -54,4 +54,12 @@ export const Xobject = {
   sleep(second) {
     return new Promise(resolve => setTimeout(resolve, second * 1000))
   },
+
+  to_i(value) {
+    return Math.trunc(Number(value ?? 0))
+  },
+
+  to_f(value) {
+    return Number(value ?? 0)
+  },
 }

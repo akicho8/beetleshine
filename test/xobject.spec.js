@@ -43,4 +43,20 @@ describe("Xobject", () => {
   test("a", () => {
     expect(_.isFunction(Xobject.a)).toEqual(true)
   })
+  test("to_i", () => {
+    expect(Xobject.to_i(5.6)).toEqual(5)
+    expect(Xobject.to_i("5.6")).toEqual(5)
+    expect(Xobject.to_i("")).toEqual(0)
+    expect(Xobject.to_i(" ")).toEqual(0)
+    expect(Xobject.to_i(undefined)).toEqual(0)
+    expect(Xobject.to_i(null)).toEqual(0)
+  })
+  test("to_f", () => {
+    expect(Xobject.to_f(5.6)).toEqual(5.6)
+    expect(Xobject.to_f("5.6")).toEqual(5.6)
+    expect(Xobject.to_f("")).toEqual(0.0)
+    expect(Xobject.to_f(" ")).toEqual(0.0)
+    expect(Xobject.to_f(undefined)).toEqual(0.0)
+    expect(Xobject.to_f(null)).toEqual(0.0)
+  })
 })
