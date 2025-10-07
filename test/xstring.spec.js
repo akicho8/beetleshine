@@ -71,4 +71,7 @@ describe("Xstring", () => {
   test("str_simple_format", () => {
     expect(Xstring.str_simple_format("\n\n")).toEqual("<br/><br/>")
   })
+  test("str_control_chars_remove", () => {
+    expect(Xstring.str_control_chars_remove("a\u0007b\u200Ec")).toEqual("abc")
+  })
 })

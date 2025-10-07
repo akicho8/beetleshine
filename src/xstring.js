@@ -143,4 +143,9 @@ export const Xstring = {
   str_simple_format(str) {
     return str.replace(/\n/g, "<br/>")
   },
+
+  // 制御文字(Cc)とフォーマット文字(Cf)を削除
+  str_control_chars_remove(str) {
+    return str.replace(/\p{Cc}|\p{Cf}/gu, "");
+  },
 }
