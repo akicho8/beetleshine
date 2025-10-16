@@ -31,8 +31,13 @@ export const Xdelay = {
     return setTimeout(block, 0)
   },
 
+  ////////////////////////////////////////////////////////////////////////////////
+
   // await sleep(1)
   sleep(second) {
     return new Promise(resolve => setTimeout(resolve, second * 1000))
   },
 }
+
+Xdelay.delay_start = Xdelay.delay_block
+
