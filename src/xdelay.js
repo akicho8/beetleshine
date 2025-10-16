@@ -30,4 +30,9 @@ export const Xdelay = {
   callback_later(block) {
     return setTimeout(block, 0)
   },
+
+  // await sleep(1)
+  sleep(second) {
+    return new Promise(resolve => setTimeout(resolve, second * 1000))
+  },
 }

@@ -48,13 +48,6 @@ export const Xobject = {
     alert(this.i(value))
   },
 
-  // async func() {
-  //   await Xobject.sleep(1)
-  // }
-  sleep(second) {
-    return new Promise(resolve => setTimeout(resolve, second * 1000))
-  },
-
   to_i(value) {
     return Math.trunc(Number(value ?? 0))
   },
