@@ -24,6 +24,14 @@ export const Xobject = {
     return value
   },
 
+  truthy_p(value) {
+    return !this.falsy_p(value)
+  },
+
+  falsy_p(value) {
+    return value == null || value === false
+  },
+
   p(value) {
     console.log(value)
   },

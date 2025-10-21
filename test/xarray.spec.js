@@ -46,6 +46,10 @@ describe("Xarray", () => {
   test("ary_find_all", () => {
     expect(Xarray.ary_find_all([5, 6, 7], e => e >= 6)).toEqual([6, 7])
     expect(Xarray.ary_find_all([5, 6, 7], e => false)).toEqual([])
+    expect(Xarray.ary_find_all([null, undefined, 0, "", [], {}], e => e)).toEqual([0, "", [], {}])
+  })
+  test("ary_reject", () => {
+    expect(Xarray.ary_reject([null, undefined, 0, "", [], {}], e => e)).toEqual([null, undefined])
   })
   test("ary_find_index", () => {
     expect(Xarray.ary_find_index([5, 6, 7], e => false)).toEqual(undefined)

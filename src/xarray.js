@@ -46,6 +46,10 @@ export const Xarray = {
     Xassertion.assert_kind_of_array(ary)
     return ary.filter(e => Xobject.truthy_p(block(e)))
   },
+
+  ary_reject(ary, block) {
+    Xassertion.assert_kind_of_array(ary)
+    return ary.filter(e => Xobject.falsy_p(block(e)))
   },
 
   ary_find_index(ary, block) {
