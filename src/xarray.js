@@ -32,11 +32,13 @@ export const Xarray = {
     return _.drop(ary, index)
   },
 
+  // _.sortBy がない場合
+  // const wrap = ary.map(e => ({ source: e, value: block(e) }))
+  // const sorted = _.sortBy(wrap, "value")
+  // return sorted.map(e => e.source)
   ary_sort_by(ary, block) {
     Xassertion.assert_kind_of_array(ary)
-    const wrap = ary.map(e => ({ source: e, value: block(e) }))
-    const sorted = _.sortBy(wrap, "value")
-    return sorted.map(e => e.source)
+    return _.sortBy(ary, e => block(e))
   },
 
   ary_find_all(ary, block) {
