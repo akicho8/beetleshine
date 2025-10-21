@@ -107,4 +107,26 @@ describe("Xarray", () => {
   test("ary_minus", () => {
     expect(Xarray.ary_minus(["a", "b", "c", "d"], ["b", "d"])).toEqual(["a", "c"])
   })
+  test("ary_any_p", () => {
+    expect(Xarray.ary_any_p([null, 0])).toEqual(true)
+    expect(Xarray.ary_any_p([])).toEqual(false)
+    expect(Xarray.ary_any_p([null], () => 0)).toEqual(true)
+  })
+  test("ary_all_p", () => {
+    expect(Xarray.ary_all_p([null, 0])).toEqual(false)
+    expect(Xarray.ary_all_p([])).toEqual(true)
+    expect(Xarray.ary_all_p([null], () => 0)).toEqual(true)
+    expect(Xarray.ary_all_p([0, 1, 2])).toEqual(true)
+  })
+  test("ary_none_p", () => {
+    expect(Xarray.ary_none_p([null, 0])).toEqual(false)
+    expect(Xarray.ary_none_p([])).toEqual(true)
+    expect(Xarray.ary_none_p([null], () => 0)).toEqual(false)
+  })
+  test("ary_one_p", () => {
+    expect(Xarray.ary_one_p([null, 0])).toEqual(true)
+    expect(Xarray.ary_one_p([])).toEqual(false)
+    expect(Xarray.ary_one_p([null], () => 0)).toEqual(true)
+    expect(Xarray.ary_one_p([null, null], () => 0)).toEqual(false)
+  })
 })

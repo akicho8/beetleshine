@@ -172,4 +172,9 @@ export const Xarray = {
     const set_b = new Set(b)
     return a.filter(e => !set_b.has(e))
   },
+
+  ary_any_p(ary,  block = e => e) { return ary.some(e => Xobject.truthy_p(block(e)))  },
+  ary_all_p(ary,  block = e => e) { return ary.every(e => Xobject.truthy_p(block(e))) },
+  ary_none_p(ary, block = e => e) { return !this.ary_any_p(ary, block)                },
+  ary_one_p(ary,  block = e => e) { return this.ary_find_all(ary, block).length === 1 },
 }
