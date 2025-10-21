@@ -41,9 +41,11 @@ export const Xarray = {
     return _.sortBy(ary, e => block(e))
   },
 
+  // JS の filter は 0 で false になるため危険
   ary_find_all(ary, block) {
     Xassertion.assert_kind_of_array(ary)
-    return ary.filter(e => block(e))
+    return ary.filter(e => Xobject.truthy_p(block(e)))
+  },
   },
 
   ary_find_index(ary, block) {
