@@ -106,6 +106,7 @@ describe("Xarray", () => {
   })
   test("ary_minus", () => {
     expect(Xarray.ary_minus(["a", "b", "c", "d"], ["b", "d"])).toEqual(["a", "c"])
+    expect(Xarray.ary_minus(["a", "a", "b", "b"], ["a"])).toEqual(["b", "b"])
   })
   test("ary_any_p", () => {
     expect(Xarray.ary_any_p([null, 0])).toEqual(true)
