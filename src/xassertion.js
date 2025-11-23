@@ -24,6 +24,10 @@ export const Xassertion = {
     this.assert(typeof value === "number" && !Number.isInteger(value), message)
   },
 
+  assert_kind_of_numeric(value, message = "Assertion failed: not numeric") {
+    this.assert_equal("number", typeof value, message)
+  },
+
   assert_kind_of_string(value, message = "Assertion failed: not string") {
     this.assert_equal("string", typeof value, message)
   },
