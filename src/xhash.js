@@ -65,4 +65,10 @@ export const Xhash = {
     })
     return result
   },
+
+  // Xhash.hash_hash_key_p({ a: null }, "a") // => true
+  // Xhash.hash_hash_key_p({ a: null }, "b") // => false
+  hash_has_key_p(hash, key) {
+    return key in hash
+  },
 }

@@ -42,4 +42,10 @@ describe("Xhash", () => {
     expect(hash).toEqual({ a: 1, b: null, c: 1, })
     expect(value).toEqual({a: 1, b: null})
   })
+  test("hash_has_key_p", () => {
+    const hash = { a: 1, b: null }
+    expect(Xhash.hash_has_key_p(hash, "a")).toEqual(true)
+    expect(Xhash.hash_has_key_p(hash, "b")).toEqual(true)
+    expect(Xhash.hash_has_key_p(hash, "c")).toEqual(false)
+  })
 })
