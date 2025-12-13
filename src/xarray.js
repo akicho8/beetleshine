@@ -177,4 +177,13 @@ export const Xarray = {
   ary_all_p(ary,  block = e => e) { return ary.every(e => Xobject.truthy_p(block(e))) },
   ary_none_p(ary, block = e => e) { return !this.ary_any_p(ary, block)                },
   ary_one_p(ary,  block = e => e) { return this.ary_find_all(ary, block).length === 1 },
+
+  ary_tally(ary) {
+    Xassertion.assert_kind_of_array(ary)
+    const count = {}
+    ary.forEach(e => {
+      count[e] = (count[e] ?? 0) + 1
+    })
+    return count
+  },
 }

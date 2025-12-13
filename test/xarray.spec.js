@@ -130,4 +130,7 @@ describe("Xarray", () => {
     expect(Xarray.ary_one_p([null], () => 0)).toEqual(true)
     expect(Xarray.ary_one_p([null, null], () => 0)).toEqual(false)
   })
+  test("ary_tally", () => {
+    expect(Xarray.ary_tally(["A", "B", "A"])).toEqual({"A": 2, "B": 1})
+  })
 })
