@@ -71,4 +71,13 @@ export const Xhash = {
   hash_has_key_p(hash, key) {
     return key in hash
   },
+
+  hash_empty_p(hash) {
+    for (const _ in hash) {
+      return false
+    }
+    return true
+  },
+  hash_blank_p(hash)   { return this.hash_empty_p(hash)  },
+  hash_present_p(hash) { return !this.hash_empty_p(hash) },
 }

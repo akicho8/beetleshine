@@ -48,4 +48,16 @@ describe("Xhash", () => {
     expect(Xhash.hash_has_key_p(hash, "b")).toEqual(true)
     expect(Xhash.hash_has_key_p(hash, "c")).toEqual(false)
   })
+  test("hash_empty_p", () => {
+    expect(Xhash.hash_empty_p({})).toEqual(true)
+    expect(Xhash.hash_empty_p({a: 1})).toEqual(false)
+  })
+  test("hash_blank_p", () => {
+    expect(Xhash.hash_blank_p({})).toEqual(true)
+    expect(Xhash.hash_blank_p({a: 1})).toEqual(false)
+  })
+  test("hash_present_p", () => {
+    expect(Xhash.hash_present_p({})).toEqual(false)
+    expect(Xhash.hash_present_p({a: 1})).toEqual(true)
+  })
 })
