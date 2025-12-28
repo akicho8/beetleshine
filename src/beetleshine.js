@@ -17,6 +17,7 @@ import { Xtime      } from "./xtime.js"
 import { Xaratio    } from "./xaratio.js"
 import { Xbase64    } from "./xbase64.js"
 import { Xquery     } from "./xquery.js"
+import { Xbenchmark } from "./xbenchmark.js"
 
 export const Beetleshine = {
   ...Xassertion,
@@ -37,4 +38,5 @@ export const Beetleshine = {
   ...Xaratio,
   ...Xbase64,
   ...Xquery,
+  ...Xbenchmark,
 }
