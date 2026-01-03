@@ -56,6 +56,14 @@ export const Xassertion = {
     this.assert(v !== 0, message)
   },
 
+  assert_not_null(value, message = "Assertion failed: null") {
+    this.assert(value != null, message)
+  },
+
+  assert_null(value, message = "Assertion failed: not null") {
+    this.assert(value == null, message)
+  },
+
   // private
 
   assert_debugger(message = null) {
